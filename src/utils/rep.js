@@ -39,14 +39,6 @@ export const WORKOUTS = {
     }
 }
 
-//write a function that flattens this thing with all the variants
-//if athome, then have to specify equipment (if required otherwise bodyweight)
-//add instructions for substitutions (at home substitutions) for weights etc
-//variant is just going to be gym (forget about home stuff as long as one of the variants is
-//make it so that you can't get the same varient in a single workout (maybe)
-//add all the other variants to the subsubstitute list
-//pick a random exercise
-//for non-members, exclude all the at home specific exercises (anything particularly pussy like a lot of the bodyweight stuff)
 
 const bw_exercises = {
 
@@ -66,11 +58,11 @@ export const EXERCISES = {
             decline: 'Perform this exercise on a bench inclined at a -15 degree angle, your head at the lower end of the bench. Try to hook your legs over the end of the higher end of the bench, so to prevent yourself from slipping.',
             underhand: 'Lying on a flat bench, grab the bar with a reversed underhand grip, so that you are now holding the barbell thumbs pointing outwards. Be sure to reduce the weight when performing this variation of the exercise.'
         },
-        unit: 'reps', //vs duration
+        unit: 'reps', 
         muscles: ['chest'],
         description: 'Ensure your scapula are retracted when performing the bench press, arms 2 palm widths wider than shoulder width. Lower the bar with your elbows flared at a 45 degree angle from your torso, touching the bar down to your chest at your nipple line.',
         substitutes: ['pushups', 'dumbbell bench press', 'floor press']
-        //have general description first and specific one second
+       
     },
     prayer_press: {
         type: 'accessory',
@@ -84,7 +76,7 @@ export const EXERCISES = {
             horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
             decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
         },
-        unit: 'reps', //vs duration        
+        unit: 'reps',       
         muscles: ['chest'],
         description: 'Place a light, weighted plate between the palms of your hands (as if your were praying), and while keeping your scapula retracted, press your hands together while pushing the plate away from you.',
         substitutes: ['palm prayer press']
@@ -92,7 +84,7 @@ export const EXERCISES = {
     pec_dec: {
         type: 'accessory',
         meta: {
-            environment: 'gym', //if it has home, have to specify equipment
+            environment: 'gym', 
             level: [0, 1, 2],
             equipment: []
         },
@@ -101,7 +93,7 @@ export const EXERCISES = {
             standard: 'Place the seat height so that your hands meet in the same horizontal plane as your nipple height',
             decline: 'Place the seat height as high as possible so that the hand holds are below nipple height while sitting.'
         },
-        unit: 'reps', //vs duration        muscles: ['chest'],        
+        unit: 'reps',       
         muscles: ['chest'],
         description: 'Ensure your scapula is retracted and try to puff our your chest while performing this exercise. Make sure you bring the handles together so they touch, and the range of motion should be no more than 90 degrees either side.',
         substitutes: ['cable chest fly']
@@ -113,7 +105,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: ['dumbbells', 'bands']
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',  
         muscles: ['chest', 'shoulders'],
         description: 'Standing with a dumbbell in either hand, palms facing forwards and chest puffed out, raise one dumbbell up and across your body until your palm is facing the ceiling and your hand has crossed your body. Lower slowing and repeat on the other side.',
         substitutes: ['inclined cable fly']
@@ -125,7 +117,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: ['dumbbells']
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['chest', 'shoulders'],
         description: 'Standing with a weighted plate gripped eitherside, start with the plate down infront of your hips, and then raise the plate up infront of you to shoulder height, pausing at that height for a moment, before lowering the weight back down. Puff your chest up towards the ceiling while performing this exercise.',
         substitutes: ['standing dumbbell inline fly']
@@ -142,7 +134,7 @@ export const EXERCISES = {
             horizontal: 'Ensure the cabling fixing is at approximately chest height while performing this exercise.',
             decline: 'Set the cable fixing to the highest setting, so your hands move from high to low (as they come together infront of you) throughout the motion.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['chest'],
         description: 'This exercise can be performed from high to low, or low to high. Using the handles and with your arms mostly straight, bring the two handles together in front of you, and then slowly release backwards.',
         substitutes: ['Inclined dumbbell fly']
@@ -159,7 +151,7 @@ export const EXERCISES = {
             military: 'Ensure your hands are in the same vertical plane as your chest and shoulders',
             decline: 'To perform a decline pushup, place your hands slightly further underneath you, so that you are leaning over your hands and they are closer towards the line of your waist, that your shoulders.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',   
         muscles: ['chest'],
         description: 'In a plank position, with hands slightly further than shoulder width apart (and thumbs around nipple height), slowly lower your chest to the ground, keeping elbows flared to a 45 degree angle. Then press back up.',
         substitutes: ['pushups', 'dumbbell bench press', 'floor press']
@@ -171,45 +163,13 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: []
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',   
         muscles: ['chest', 'triceps'],
         description: 'When in the dip position, ensure you are leaning forward over your hands and slowly lower your body until your elbows are parallel with the ground. Then press back up. Keep your elbow flare to a maximum of 45 degrees.',
         substitutes: ['Chair dip']
     },
-    // incline_barbell_bench: {
-    //     type: 'compound',
-    //     meta: {
-    //         environment: 'gymhome',
-    //         level: [0, 1, 2],
-    //         equipment: []
-    //     },
-    //     variants: {
-    //         incline: 'Press your hands away from you at a 45 degree angle above horizontal.',
-    //         horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
-    //         decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
-    //     },
-    //     unit: 'reps', //vs duration    
-    //     muscles: ['chest'],
-    //     description: 'With a bench inclined between 30 and 45 degrees, hold the bar directly above your chest. With your scapula retracted, lower the bar keeping elbows to a maximum 45 degree flare, until the bar touches your chest. Then press back up.',
-    //     substitutes: ['inclined dumbbell press', 'inclined pushup']
-    // },
-    // incline_dumbbell_bench: {
-    //     type: 'compound',
-    //     meta: {
-    //         environment: 'gymhome',
-    //         level: [0, 1, 2],
-    //         equipment: []
-    //     },
-    //     variants: {
-    //         incline: 'Press your hands away from you at a 45 degree angle above horizontal.',
-    //         horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
-    //         decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
-    //     },
-    //     unit: 'reps', //vs duration    
-    //     muscles: ['chest'],
-    //     description: 'With a bench inclined between 30 and 45 degrees, hold the dumbbells directly above your chest. With your scapula retracted, lower the dumbells keeping elbows to a maximum 45 degree flare, until your thumbs touch your nipples. Then press back up.',
-    //     substitutes: ['inclined dumbbell press', 'inclined pushup']
-    // },
+       unit: 'reps',  
+  
     dumbbell_bench_press: {
         type: 'compound',
         meta: {
@@ -228,28 +188,12 @@ export const EXERCISES = {
             rotating_horizontal: 'Perform this exercise on a flat bench. Begin the movement with the dumbbells up above your chest, thumbs pointing towards eachother, and as you lower them either side of your chest, rotate the dumbbells so that your thumbs rotate to point up your body in the direction of your head, making the dumbbells parallel to each other. As you press back up, rotate them back to the original position.',
             rotating_decline: 'Perform this exercise on a bench declined by around 15 degrees, with your head resting at the lower end. Begin the movement with the dumbbells up above your chest, thumbs pointing towards eachother, and as you lower them either side of your chest, rotate the dumbbells so that your thumbs rotate to point up your body in the direction of your head, making the dumbbells parallel to each other. As you press back up, rotate them back to the original position.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',   
         muscles: ['chest'],
         description: 'With your scapula retracted, hold the dumbbells directly above your chest with your hands slightly wider than shoulder width apart. Lower the dumbbells, keeping elbows to a maximum 45 degree flare, until the your thumbs can touch your nipples/or are at the same height as your nipples, keeping your elbows flared at 45 degrees from your torso. Then press back up.',
         substitutes: ['pushup', 'bench press']
     },
-    // decline_pushup: {
-    //     type: 'accessory',
-    //     meta: {
-    //         environment: 'gymhome',
-    //         level: [0, 1, 2],
-    //         equipment: []
-    //     },
-    //     variants: {
-    //         incline: 'Press your hands away from you at a 45 degree angle above horizontal.',
-    //         horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
-    //         decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
-    //     },
-    //     unit: 'reps', //vs duration    
-    //     muscles: ['chest'],
-    //     description: 'With your feet elevated by 1ft or 30cm, begin in a plank position with hands slightly wider than shoulder width inline with your nipples. Lower until your thumbs touch your nipples and then press back up.',
-    //     substitutes: ['pushup', 'dips']
-    // },
+
     landmine_press: {
         type: 'accessory',
         meta: {
@@ -261,7 +205,7 @@ export const EXERCISES = {
             unilateral: 'Stand with the end of a tbar in one hand with your thumb near to your shoulder and your body at a 45 degree to the plane of the bar. Press the bar up and across your chest until your arm is extended and lower back down.',
             two_handed: 'Hold the end of the barbell with both hands, the barbell pointing directly away from your body, and press the barbell forwards and up until your hands are straight, then slowly lower it back towards your body.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',   
         muscles: ['chest'],
         description: 'Pin the end of a barbell into a ball-joint restraint or corner in the ground. Load any weight on the opposite end of the barbell. Standing behind the loaded end of the barbell, lift the one end so it starts off at chest height.',
         substitutes: ['prayer press']
@@ -279,28 +223,12 @@ export const EXERCISES = {
             decline: 'Place the seat height as high as possible so that the hand holds are below nipple height while sitting.',
             unilateral: 'Adjust the seat so the handles are approximately mid-chest level. Turn your torso 30 to 45 degrees towards the side you are about to press with. Press the handle across your body. Repeat on both sides.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',   
         muscles: ['chest'],
         description: 'Begin with your chest puffed and your scapula down and retracted. Press the handles out until your arms are straight. Then slow release backwards.',
         substitutes: ['bench press', 'pushup']
     },
-    // smith_machine_incline_press: {
-    //     type: 'compound',
-    //     meta: {
-    //         environment: 'gymhome',
-    //         level: [0, 1, 2],
-    //         equipment: []
-    //     },
-    //     variants: {
-    //         incline: 'Press your hands away from you at a 45 degree angle above horizontal.',
-    //         horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
-    //         decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
-    //     },
-    //     unit: 'reps', //vs duration    
-    //     muscles: ['chest'],
-    //     description: 'Lying under a smith machine, bench at a 30 to 45 degree angle, ensure that the bar is aligned with your nipple height when it contacts your body. Keep elbows flared to a maximum of 45 degrees from your torso, hands slightly wider than shoulder width.',
-    //     substitutes: ['inclined dumbbell press', 'inclined pushup']
-    // },
+
     smith_machine_press: {
         type: 'compound',
         meta: {
@@ -314,28 +242,13 @@ export const EXERCISES = {
             decline: 'Perform this exercise on a bench inclined at a -15 degree angle, your head at the lower end of the bench. Try to hook your legs over the end of the higher end of the bench, so to prevent yourself from slipping.',
             underhand: 'Lying on a flat bench, grab the bar with a reversed underhand grip, so that you are now holding the barbell thumbs pointing outwards. Be sure to reduce the weight when performing this variation of the exercise.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps', 
         muscles: ['chest'],
         description: 'Lying under a smith machine, ensure that the bar is aligned with your nipple height when it contacts your body. Keep elbows flared to a maximum of 45 degrees from your torso, hands slightly wider than shoulder width.',
         substitutes: ['bench press', 'pushup', 'dumbbell press']
     },
-    // unilateral_chest_press: {
-    //     type: 'accessory',
-    //     meta: {
-    //         environment: 'gym',
-    //         level: [0, 1, 2],
-    //         equipment: []
-    //     },
-    //     variants: {
-    //         incline: 'Press your hands away from you at a 45 degree angle above horizontal.',
-    //         horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
-    //         decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
-    //     },
-    //     unit: 'reps', //vs duration    
-    //     muscles: ['chest'],
-    //     description: 'Adjust the seat so the handles are approximately mid-chest level. Turn your torse 30 to 45 degrees the side you are about to press with. Press the handle across your body until your arm is straight and then release backwards. Repeat on both sides.',
-    //     substitutes: ['prayer press', 'cable fly']
-    // },
+        
+
     unilateral_cable_press: {
         type: 'accessory',
         meta: {
@@ -348,7 +261,7 @@ export const EXERCISES = {
             horizontal: 'Ensure the cabling fixing is at approximately chest height while performing this exercise. Hold the cable in a neutral or overhand grip.',
             decline: 'Set the cable fixing to the highest setting, so your hand moves from high to low throughout the motion.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['chest'],
         description: 'Align your body at a 30 to 45 degree plane to the cable. Press the cable handle across your body until your elbow is straight and slowly release backwards. Ensure elbows are tucked during the exercise.',
         substitutes: ['unilateral chest press']
@@ -365,7 +278,7 @@ export const EXERCISES = {
             horizontal: 'Ensure the cabling fixing is at approximately chest height while performing this exercise.',
             decline: 'Set the cable fixing to the highest setting, so your hands move from high to low (as they come together infront of you) throughout the motion.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['chest'],
         description: 'As if you were doing a pushup or bench press, press the handles together and then crossed over in front of you, alternating the crossover of your hands with each rep.',
         substitutes: ['cable fly', 'unilateral chest press']
@@ -377,7 +290,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: []
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',   
         muscles: ['chest'],
         description: 'While in a plank or kneeling plank position, with your hands aligned at approximately eye height on the ground, press yourself away from the ground. Then allow your body to come back down to the ground, keeping your elbows straight and the inside of your elbow facing forward at all times.',
         substitutes: ['pushup']
@@ -394,7 +307,7 @@ export const EXERCISES = {
             flat: 'Perform this exercise on a horizontal bench.',
             decline: 'Perform this exercise on a bench inclined at a -15 degree angle, your head at the lower end of the bench. Try to hook your legs over the end of the higher end of the bench, so to prevent yourself from slipping.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['chest'],
         description: 'Holding a dumbbell in each hand directly above your chest, slowly lower the dumbbells to either side of your body while keeping your arms mostly straight, palms to the ceiling. Ensure the weights do not drop lowering than the height of your body.',
         substitutes: ['cable fly']
@@ -406,7 +319,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: ['dumbbells']
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',     
         muscles: ['chest'],
         description: 'Lying on your back with your scapula retracted, and the dumbbells starting over your chest, lower each side back down with elbows flared to a 45 degree angle until your elbows touch the ground. Then press back up.',
         substitutes: ['dumbbell bench press']
@@ -418,7 +331,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: ['barbell']
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['chest'],
         description: 'Lying with your scapula retracted, and the barbell starting over your chest, lower the barbell down towards nipple level, elbows flared to a 45 degree angle until your elbows touch the ground. Then press back up.',
         substitutes: ['barbell bench press']
@@ -430,7 +343,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: ['dumbbells']
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['chest', 'back'],
         description: 'Lying holding a single dumbbell as if it were a goblet directly above your chest, slowly track the dumbbell back over your head, keeping your elbows tucked. Track back as far as comfortable behind your head, and then return to the starting position.',
         substitutes: ['Inclined dumbbell fly']
@@ -447,7 +360,7 @@ export const EXERCISES = {
             neutral_grip: 'Perform this movement with a neutral grip, palms facing each other.',
             overhand: 'Perform this movement with a pronated grip, palms facing away from you.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['back'],
         description: 'Hands approximately shoulder width or slightly wider apart, start by retracting your scapula down and back, and then pull your body up until your chin is above bar height. Then return to a dead hang. Use an assisted pullup machine if required.',
         substitutes: ['lat pulldown']
@@ -464,7 +377,7 @@ export const EXERCISES = {
             neutral_grip: 'Perform this movement with a neutral grip, palms facing each other.',
             overhand: 'Perform this movement with a pronated grip, palms facing away from you.'
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['back'],
         description: 'Hands approximately shoulder width or slightly wider apart, start by retracting your scapula down and back, and then pull the bar down until it touches your chest. Then return to a dead hang position.',
         substitutes: ['pullup', 'kneeling lat pushdown']
@@ -476,7 +389,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: ['bands']
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',     
         muscles: ['back'],
         description: 'Begin with the bar approximately eye level and your arms extended mostly straight out in front of you, press the bar down (maintaining straight arms) until your hands or the bar touches your lower mid-section. Press your chest out and bring your hips through/between your arms (thrust). Release back to origin.',
         substitutes: ['pullup', 'kneeling lat pulldown']
@@ -493,7 +406,7 @@ export const EXERCISES = {
             neutral_grip: 'Perform this movement with a neutral grip, palms facing each other.',
             overhand: 'Perform this movement with a pronated grip, palms facing away from you.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps', 
         muscles: ['back'],
         description: 'Hands  approximately shoulder width or slightly wider apart, start by retracting your scapula down and back, and then pull the bar down until it touches your chest. Ensure your look at the ceiling throughout the duration of the movement. Then return to a dead hang position.',
         substitutes: ['pullup', 'kneeling lat pushdown']
@@ -505,7 +418,7 @@ export const EXERCISES = {
             level: [0, 1, 2],
             equipment: ['bands']
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['back'],
         description: 'Seated in the lat pulldown machine, begin by retracting your shoulder and scapula down and backwards. Then pull the handle down until your thumb can touch your shoulder. Repeat on both sides.',
         substitutes: ['pullup', 'kneeling lat pushdown']
@@ -521,7 +434,7 @@ export const EXERCISES = {
             underhand: 'Perform this movement with a supinated grip, palms facing away from your feet.',
             overhand: 'Perform this movement with a pronated grip, palms facing towards your feet.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['back'],
         description: 'Begin standing, with your hands slightly wider than shoulder width apart holding the bar. With a slight bend in your knees, hinge at your hips until your torso is angled 45 degrees forward. Imagine pulling your elbows back behind you to complete the row.',
         substitutes: ['seated row', 'dumbbell row']
@@ -538,7 +451,7 @@ export const EXERCISES = {
             neutral_grip: 'Perform this movement with a neutral grip, palms facing each other.',
             overhand: 'Perform this movement with a pronated grip, palms facing towards your feet.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['back'],
         description: 'Begin standing, with your hands either side of your body holding the dumbbells. With a slight bend in your knees, hinge at your hips until your torso is angled 45 degrees forward. Imagine pulling your elbows back behind you to complete the row.',
         substitutes: ['seated row', 'dumbbell row']
@@ -554,7 +467,7 @@ export const EXERCISES = {
             underhand: 'Perform this movement with a supinated grip, palms facing away from your feet.',
             overhand: 'Perform this movement with a pronated grip, palms facing towards your feet.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['back'],
         description: 'Begin with the bar on the ground, with your hands slightly wider than shoulder width apart. Hold your core tight, and pull your elbows back behind you until the bar touches your mid-chest. Slowly release back down to the ground and then repeat.',
         substitutes: ['seated row', 'barbell row']
@@ -570,7 +483,7 @@ export const EXERCISES = {
             underhand: 'Perform this movement with a supinated grip, palms facing away from your feet.',
             overhand: 'Perform this movement with a pronated grip, palms facing towards your feet.',
         },
-        unit: 'reps', //vs duration    
+        unit: 'reps',    
         muscles: ['back'],
         description: 'Find a bar or table at approximately chest to weight height, and hang underneath it with your legs extending out underneath the support. Row your chest to the bar, and slowly lower yourself back down. It\'s preferable that your body remain rigid and straight during the execution of the exercise.',
         substitutes: ['seated row', 'barbell row']
@@ -1341,40 +1254,7 @@ export const EXERCISES = {
         description: 'Perform this exercise seated or standing with dumbbells in either hand by your sides. You can perform both hands at the same time or alternating. Curl each dumbbell upwards from your side until your elbows are fully bent, and the dumbbell is raised. Minimise swinging or shoulder usage throughout the movement.',
         substitutes: ['hammer curls']
     },
-    // dumbbell_curls: {
-    //     type: 'compound',
-    //     meta: {
-    //         environment: 'gymhome',
-    //         level: [0, 1, 2],
-    //         equipment: []
-    //     },
-    //     variants: {
-    //         incline: 'Press your hands away from you at a 45 degree angle above horizontal.',
-    //         horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
-    //         decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
-    //     },
-    //     unit: 'reps', //vs duration    
-    //     muscles: ['biceps'],
-    //     description: 'Seated or standing with dumbbells in either hand by your side, begin the curl with dumbbells in a neutral grip, finishing with you palm supinated and facing the ceiling.',
-    //     substitutes: ['dumbell supinated curls']
-    // },
-    // dumbbell_hammer_curls: {
-    //     type: 'compound',
-    //     meta: {
-    //         environment: 'gymhome',
-    //         level: [0, 1, 2],
-    //         equipment: []
-    //     },
-    //     variants: {
-    //         incline: 'Press your hands away from you at a 45 degree angle above horizontal.',
-    //         horizontal: 'Press your hands away from you at a 45 degree angle from horizontal.',
-    //         decline: 'Press your hands away from you at a -30 degree angle below horizontal.'
-    //     },
-    //     unit: 'reps', //vs duration    
-    //     muscles: ['biceps'],
-    //     description: 'Maintaining a neutral grip, curl the dumbbells in an alternating fashion.',
-    //     substitutes: ['dumbbell_curls']
-    // },
+   
     rope_curls: {
         type: 'accessory',
         meta: {
@@ -1777,7 +1657,7 @@ export const EXERCISES = {
 
 
 
-// module.exports = { tempos, workouts, exercises, schemes }
+
 //info page
 //tempos
 //rep ranges
